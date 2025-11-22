@@ -204,7 +204,7 @@ function ProblemOrSolutionCard({
 
 export default function ProblemSolution() {
     return (
-        <section className="py-28 px-2 md:px-0 relative overflow-visible bg-gradient-to-br from-background via-background/80 to-white/50 dark:from-background dark:to-background">
+        <section className="py-12 md:py-28 px-2 md:px-0 relative overflow-visible bg-gradient-to-br from-background via-background/80 to-white/50 dark:from-background dark:to-background">
             {/* Blurred highlight + floating avatars */}
             <div className="pointer-events-none absolute inset-0 w-full h-full z-0">
                 <div className="absolute left-1/2 top-14 -translate-x-1/2 w-[630px] h-[260px] bg-gradient-to-b from-primary/14 to-white/0 dark:from-primary/22 blur-3xl rounded-full" />

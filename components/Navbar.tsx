@@ -14,7 +14,6 @@ export default function Navbar() {
         setMounted(true);
     }, []);
 
-
     return (
         <nav className="fixed top-0 left-0 right-0 z-50 px-2 md:px-4 py-3 transition-all duration-300">
             <div className="max-w-7xl mx-auto glass-panel rounded-2xl px-3 md:px-6 py-2 flex items-center justify-between gap-4">
@@ -99,8 +98,9 @@ export default function Navbar() {
                             )}
                         </button>
                     )}
+                    {/* Show Early Access button only on desktop (md and up) */}
                     <button
-                        className="relative font-semibold text-sm px-5 py-2 rounded-full bg-gradient-to-r from-primary/90 to-neon-blue text-background shadow-lg hover:from-primary hover:to-neon-purple hover:scale-105 active:scale-100 transition-all duration-150 outline-none ring-0 hover:ring-2 hover:ring-primary/40"
+                        className="hidden md:inline-block relative font-semibold text-sm px-5 py-2 rounded-full bg-gradient-to-r from-primary/90 to-neon-blue text-background shadow-lg hover:from-primary hover:to-neon-purple hover:scale-105 active:scale-100 transition-all duration-150 outline-none ring-0 hover:ring-2 hover:ring-primary/40"
                         tabIndex={0}
                     >
                         <span className="relative z-10">Get Early Access</span>
@@ -144,6 +144,15 @@ export default function Navbar() {
                     >
                         Pricing
                     </Link>
+                    {/* Mobile Early Access CTA */}
+                    <button
+                        className="mt-4 relative font-semibold text-base px-5 py-3 rounded-full bg-gradient-to-r from-primary/90 to-neon-blue text-background shadow-lg hover:from-primary hover:to-neon-purple hover:scale-105 active:scale-100 transition-all duration-150 outline-none ring-0 hover:ring-2 hover:ring-primary/40"
+                        tabIndex={0}
+                        onClick={() => setMobileOpen(false)}
+                    >
+                        <span className="relative z-10">Get Early Access</span>
+                        <span className="absolute left-0 top-0 w-full h-full rounded-full pointer-events-none opacity-20 bg-primary blur"></span>
+                    </button>
                 </div>
             </div>
         </nav>

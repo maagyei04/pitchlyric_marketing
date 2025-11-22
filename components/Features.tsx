@@ -14,7 +14,7 @@ const glass =
 export default function Features() {
     return (
         <section id="features" className="py-8 px-2 md:px-3 bg-gradient-to-b from-background to-secondary/20">
-            <div className="w-full px-16 mx-auto">
+            <div className="w-full px-2 md:px-16 mx-auto">
                 <div className="mb-16 text-center">
                     <h2 className="text-3xl md:text-5xl font-bold mb-4 text-foreground">
                         Everything you need to <br />

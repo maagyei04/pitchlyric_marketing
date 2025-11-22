@@ -108,7 +108,7 @@ function Hero() {
                 transition={{ duration: 1.2, delay: 0.8 }}
             />
 
-            <div className="w-full mx-auto px-10 sm:px-24 md:px-40 py-16 md:py-12 grid lg:grid-cols-2 gap-8 items-center">
+            <div className="w-full mx-auto px-10 sm:px-24 md:px-40 py-8 md:py-12 grid lg:grid-cols-2 gap-8 items-center">
                 {/* Left side */}
                 <motion.div
                     initial={{ opacity: 0, y: 20 }}
@@ -116,7 +116,7 @@ function Hero() {
                     transition={{ duration: 0.6 }}
                 >
                     <motion.h1
-                        className="flex flex-col justify-stretch h-full min-h-[200px] text-4xl sm:text-5xl lg:text-6xl font-bold leading-tight lg:leading-[1.1] mb-6 text-foreground"
+                        className="flex flex-col justify-stretch h-full min-h-[200px] text-4xl sm:text-5xl lg:text-5xl font-bold leading-tight lg:leading-[1.1] mb-6 text-foreground"
                         style={{ minHeight: '220px' }}
                         initial={{ opacity: 0, y: 30 }}
                         animate={{ opacity: 1, y: 0 }}
