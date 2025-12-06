@@ -47,7 +47,7 @@ export default function Modal({ isOpen, onClose, url }: ModalProps) {
                             {/* Header */}
                             <div className="flex items-center justify-between px-4 py-3 border-b border-border bg-muted/30">
                                 <span className="text-sm font-medium text-muted-foreground">
-                                    Pitchlyric Waiting Form
+                                    Pitchlyric Waiting List Form
                                 </span>
                                 <button
                                     onClick={onClose}
