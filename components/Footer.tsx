@@ -35,8 +35,8 @@ export default function Footer() {
                     <Link href="/licensing" className="hover:text-foreground transition-colors">Licensing</Link>
                     <Link href="/royalties" className="hover:text-foreground transition-colors">Royalties</Link>
                     <Link href="/safety" className="hover:text-foreground transition-colors">Safety</Link>
-                    <Link href="#" className="hover:text-foreground transition-colors">Privacy</Link>
-                    <Link href="#" className="hover:text-foreground transition-colors">Terms</Link>
+                    <Link href="/privacy" className="hover:text-foreground transition-colors">Privacy</Link>
+                    <Link href="/terms" className="hover:text-foreground transition-colors">Terms</Link>
                 </div>
 
                 {/* Bottom Section: Copyright */}
