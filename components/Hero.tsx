@@ -130,7 +130,7 @@ function Hero() {
                                 The Ultimate Workspace
                             </span>
                             <span className="flex-1 flex items-start block">
-                                for Professional Lyricists
+                                for Songwriters & Lyricists
                             </span>
                             <span className="block mt-2 text-base lg:text-xl font-normal text-primary/80 flex-1 flex items-start">
                                 More than AI music, it’s your creative headquarters.
