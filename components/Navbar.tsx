@@ -6,6 +6,9 @@ import { Sun, Moon, Menu } from "lucide-react";
 import * as React from "react";
 
 import Modal from "./Modal";
+import Image from "next/image";
+
+import PitchlyricIcon from '../app/pitchlyric.png';
 
 export default function Navbar() {
     const { theme, setTheme } = useTheme();
@@ -24,37 +27,7 @@ export default function Navbar() {
                     {/* Logo Area */}
                     <Link href="/" className="flex items-center gap-3 group">
                         <div className="w-10 h-10 bg-gradient-to-tr from-neon-purple via-neon-blue to-sky-400 rounded-xl flex items-center justify-center shadow-lg ring-2 ring-primary/40 transition-all group-hover:scale-105">
-                            <svg
-                                width="32"
-                                height="32"
-                                viewBox="0 0 32 32"
-                                fill="none"
-                                className="w-8 h-8"
-                            >
-                                <circle
-                                    cx="16"
-                                    cy="16"
-                                    r="14"
-                                    fill="url(#logo-gradient)"
-                                    stroke="white"
-                                    strokeWidth="2"
-                                    opacity="0.95"
-                                />
-                                <path
-                                    d="M14.5 8.5v10a3.5 3.5 0 1 0 2 3.167V10.5h5V8.5h-7z"
-                                    stroke="white"
-                                    strokeWidth="1.85"
-                                    strokeLinejoin="round"
-                                    fill="none"
-                                />
-                                <defs>
-                                    <radialGradient id="logo-gradient" cx="0" cy="0" r="1" gradientTransform="translate(16 16) rotate(90) scale(17)">
-                                        <stop stopColor="#9B5CF6" />
-                                        <stop offset="0.6" stopColor="#3ABFFD" />
-                                        <stop offset="1" stopColor="#38bdf8" />
-                                    </radialGradient>
-                                </defs>
-                            </svg>
+                            <Image src={PitchlyricIcon} alt='Pitchlyric icon' style={{ width: '100%', height: '100%' }} className="object-contain rounded-xl" />
                         </div>
                         <span className="text-2xl font-extrabold tracking-tight text-foreground flex items-center gap-2">
                             Pitchlyric
@@ -104,12 +77,13 @@ export default function Navbar() {
                         )}
                         {/* Show Early Access button only on desktop (md and up) */}
                         <button
-                            className="hidden md:inline-block relative font-semibold text-sm px-5 py-2 rounded-full bg-gradient-to-r from-primary/90 to-neon-blue text-background shadow-lg hover:from-primary hover:to-neon-purple hover:scale-105 active:scale-100 transition-all duration-150 outline-none ring-0 hover:ring-2 hover:ring-primary/40"
+                            className="hidden md:inline-block relative font-semibold text-sm px-5 py-2 rounded-full bg-gradient-to-br from-gray-300 via-gray-100 to-gray-300 text-gray-800 shadow-lg hover:from-gray-400 hover:via-gray-200 hover:to-gray-400 hover:scale-105 active:scale-100 transition-all duration-150 outline-none ring-0 hover:ring-2 hover:ring-gray-400/40
+                            dark:from-gray-800 dark:via-gray-600 dark:to-gray-800 dark:text-gray-100 dark:hover:from-gray-700 dark:hover:via-gray-500 dark:hover:to-gray-700"
                             tabIndex={0}
                             onClick={() => setShowModal(true)}
                         >
                             <span className="relative z-10">Get Early Access</span>
-                            <span className="absolute left-0 top-0 w-full h-full rounded-full pointer-events-none opacity-20 bg-primary blur"></span>
+                            <span className="absolute left-0 top-0 w-full h-full rounded-full pointer-events-none opacity-20 bg-gray-500 blur"></span>
                         </button>
                         {/* Mobile Menu Button */}
                         <button

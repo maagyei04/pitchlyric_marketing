@@ -9,8 +9,8 @@ const inter = Inter({
 });
 
 export const metadata: Metadata = {
-  title: "Pitchlyric | AI Workspace for Songwriters",
-  description: "Turn lyrics into professional demos instantly.",
+  title: "Pitchlyric | Workspace for Songwriters",
+  description: "More than just a music tool, all in one place built for lyricists",
 };
 
 export default function RootLayout({

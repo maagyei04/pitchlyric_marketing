@@ -1,7 +1,9 @@
 "use client";
 
+import { useState } from "react"; // Import useState
 import { motion } from "framer-motion";
-import { FileText, Sparkles, BarChart3, ShoppingBag } from "lucide-react";
+import { FileText, Sparkles, BarChart3, ShoppingBag, Book } from "lucide-react";
+import Modal from "./Modal"; // Import Modal component
 
 // Updated glass effect for consistent light/dark theming, pulled from the provided reference
 const glass =
@@ -12,26 +14,27 @@ const glass =
     "border-black/10 dark:border-white/15 shadow-lg";
 
 export default function Features() {
+    const [showModal, setShowModal] = useState(false); // State to control modal visibility
+
     return (
         <section id="features" className="py-8 px-2 md:px-3 bg-gradient-to-b from-background to-secondary/20">
-            <div className="w-full px-2 md:px-16 mx-auto">
+            <div className="w-full px-16 mx-auto">
                 <div className="mb-16 text-center">
                     <h2 className="text-3xl md:text-5xl font-bold mb-4 text-foreground">
-                        Everything you need to <br />
-                        <span>dominate the charts.</span>
+                        Core Features Overview
                     </h2>
                     <p className="text-muted-foreground max-w-2xl mx-auto">
                         From ideation to monetization, Pitchlyric gives you the superpowers of a full production studio.
                     </p>
                 </div>
 
-                <div className="grid grid-cols-1 md:grid-cols-3 gap-6 auto-rows-[minmax(300px,auto)]">
+                <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6 auto-rows-[minmax(300px,auto)]">
                     {/* Feature 1: Notes Workspace */}
                     <motion.div
                         initial={{ opacity: 0, y: 20 }}
                         whileInView={{ opacity: 1, y: 0 }}
                         viewport={{ once: true }}
-                        className={`md:col-span-2 group ${glass}`}
+                        className={`md:col-span-1 lg:col-span-2 group ${glass}`}
                     >
                         <div className="absolute top-0 right-0 w-64 h-64 bg-blue-500/10 rounded-full blur-[80px] -z-10" />
                         <div className="relative z-10 h-full flex flex-col justify-between">
@@ -41,8 +44,11 @@ export default function Features() {
                                         <FileText className="w-6 h-6" />
                                     </div>
                                     <h3 className="text-2xl font-bold mb-2 text-foreground">Smart Notes Workspace</h3>
-                                    <p className="text-muted-foreground max-w-md">
-                                        Organize your genius. Tag lyrics by mood, genre, and tempo. Keep drafts separate from finished songs.
+                                    <p className="text-muted-foreground max-w-l">
+                                        A powerful writing room for lyricists. <br />
+
+                                        Write or upload, edit, annotate and organize your lyrics, tag ideas with mood, genre and tempo, and move smoothly from rough
+                                        drafts to final versions with tools tailored specifically for songwriting...
                                     </p>
                                 </div>
                             </div>
@@ -77,9 +83,15 @@ export default function Features() {
                         <div className="w-12 h-12 rounded-xl bg-secondary flex items-center justify-center mb-4 text-neon-purple">
                             <Sparkles className="w-6 h-6" />
                         </div>
-                        <h3 className="text-xl font-bold mb-2 text-foreground">AI Demo Generator</h3>
+                        <h3 className="text-xl font-bold mb-2 text-foreground">Demo Generator (Your Secret Advantage)</h3>
                         <p className="text-muted-foreground text-sm mb-6">
-                            Select style, mood, and vocals. Get a radio-ready demo in seconds.
+                            Your lyrics deserve to be heard, not just read. <br />
+                            Generate a clean, professional audio demo instantly. No studios. No delays.
+                            Fast, affordable and perfect for pitches.
+                            The demo doesn’t replace real artists — it simply gives your lyrics a voice so people can hear
+                            their potential.
+                            <br />
+                            The goal is simple: help your songs stand out without needing a studio session every time.
                         </p>
                         <div className="absolute bottom-0 right-0 left-0 h-32 bg-gradient-to-t from-neon-purple/10 to-transparent" />
                     </motion.div>
@@ -95,9 +107,11 @@ export default function Features() {
                         <div className="w-12 h-12 rounded-xl bg-secondary flex items-center justify-center mb-4 text-green-500">
                             <BarChart3 className="w-6 h-6" />
                         </div>
-                        <h3 className="text-xl font-bold mb-2 text-foreground">Pitch Dashboard</h3>
+                        <h3 className="text-xl font-bold mb-2 text-foreground">Pitch Dashboard and Analytics</h3>
                         <p className="text-muted-foreground text-sm">
-                            Track opens, plays, and responses. Stop guessing if they heard it.
+                            See what happens after you hit send. <br />
+                            Track opens, listens, saves, responses and overall performance to understand which songs are
+                            resonating.
                         </p>
                     </motion.div>
 
@@ -107,15 +121,16 @@ export default function Features() {
                         whileInView={{ opacity: 1, y: 0 }}
                         viewport={{ once: true }}
                         transition={{ delay: 0.3 }}
-                        className={`md:col-span-2 flex flex-col items-center gap-8 ${glass} w-full`}
+                        className={`flex flex-col items-center gap-8 ${glass} w-full`}
                     >
                         <div className="flex-1 flex flex-col items-center text-center w-full">
                             <div className="w-12 h-12 rounded-xl bg-secondary flex items-center justify-center mb-4 text-yellow-500">
                                 <ShoppingBag className="w-6 h-6" />
                             </div>
-                            <h3 className="text-2xl font-bold mb-2 text-foreground">Artist Marketplace</h3>
+                            <h3 className="text-2xl font-bold mb-2 text-foreground">Artist & Industry Marketplace</h3>
                             <p className="text-muted-foreground mb-6">
-                                A public-facing catalog where artists browse your demos. Sell exclusive rights or collaborate directly.
+                                Publish & showcase your lyrics and demos. Let artists, producers and labels discover your work. Set your visibility preferences, pitch for
+                                collaborations, placements or licensing.
                             </p>
                             <div className="w-full bg-gradient-to-br from-gray-800 to-black rounded-xl border border-white/10 flex flex-col items-center justify-center relative overflow-hidden group-hover:scale-105 transition-transform duration-500 mx-auto p-2">
                                 <div className="absolute inset-0 bg-yellow-400/5" />
@@ -136,8 +151,52 @@ export default function Features() {
                             </div>
                         </div>
                     </motion.div>
+
+                    {/* Feature 5: Portfolio and Songbook Manager */}
+                    <motion.div
+                        initial={{ opacity: 0, y: 20 }}
+                        whileInView={{ opacity: 1, y: 0 }}
+                        viewport={{ once: true }}
+                        transition={{ delay: 0.4 }}
+                        className={`group hover:border-cyan-500/30 ${glass}`}
+                    >
+                        <div className="w-12 h-12 rounded-xl bg-secondary flex items-center justify-center mb-4 text-cyan-500">
+                            <Book className="w-6 h-6" />
+                        </div>
+                        <h3 className="text-xl font-bold mb-2 text-foreground">Portfolio and Songbook Manager</h3>
+                        <p className="text-muted-foreground text-sm mb-4">
+                            Store your full catalog in one place. Track ideas, revisions and themes. Share your best work
+                            with confidence.
+                        </p>
+                        <p className="text-muted-foreground text-sm">
+                            Your entire catalog, beautifully organized. Track themes, drafts, versions and completed songs.
+                            Present your work in a professional, industry-ready format.
+                        </p>
+                    </motion.div>
+                </div>
+
+                {/* CTA Section */}
+                <div className="mt-20 text-center">
+                    <h2 className="text-3xl md:text-5xl font-bold mb-4 text-foreground">
+                        Write. Organize. Showcase. Pitch.
+                    </h2>
+                    <p className="text-muted-foreground max-w-2xl mx-auto mb-8">
+                        Give your lyrics the voice they deserve.
+                    </p>
+                    <motion.button
+                        initial={{ opacity: 0, scale: 0.9 }}
+                        whileInView={{ opacity: 1, scale: 1 }}
+                        viewport={{ once: true }}
+                        transition={{ delay: 0.2, type: "spring", stiffness: 100 }}
+                        className="px-8 py-3 bg-primary text-primary-foreground font-semibold rounded-full shadow-lg hover:bg-primary/90 transition-colors"
+                        onClick={() => setShowModal(true)} // Add onClick handler
+                    >
+                        Join the Waitlist
+                    </motion.button>
                 </div>
             </div>
+            {/* Modal component */}
+            <Modal isOpen={showModal} onClose={() => setShowModal(false)} url="https://melon.fillout.com/pitchlyric" />
         </section>
     );
 }

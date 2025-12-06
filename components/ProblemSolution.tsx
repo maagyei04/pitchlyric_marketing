@@ -45,8 +45,8 @@ const problems = [
 ];
 
 const solutions = [
-    "Instant, affordable demo creation with AI",
-    "AI-powered vocalists and instrumentation",
+    "Instant, affordable demo creation",
+    "Vocalists and instrumentation",
     "Deliver industry-standard, polished audio pitches",
     "Analytics to monitor pitch engagement",
 ];
